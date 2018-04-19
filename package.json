@@ -1,0 +1,33 @@
+{
+  "name": "timestamp-microservice",
+  "version": "1.0.0",
+  "description": "My entry on the 'Timestamp-Microservice' FCC challenge.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jakeswebdev/timestamp-microservice-repo.git"
+  },
+  "keywords": [
+    "timestamp",
+    "microservice",
+    "fcc",
+    "freecodecamp",
+    "learning",
+    "backend",
+    "nodejs"
+  ],
+  "author": "Jacobo Benzaquen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jakeswebdev/timestamp-microservice-repo/issues"
+  },
+  "homepage": "https://github.com/jakeswebdev/timestamp-microservice-repo#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "moment": "^2.22.1"
+  }
+}
