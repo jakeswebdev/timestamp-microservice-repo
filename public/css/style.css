@@ -1,0 +1,20 @@
+
+h2{
+    text-align: center;
+    
+}
+
+h3{
+    padding-top:5%;
+    color:green;
+}
+
+#text{
+    font-family: 'Righteous', cursive;
+    color:white;
+    background-color: rgb(49, 48, 48);
+    border:5px solid black;
+    border-radius: 5%;
+}
+
+
