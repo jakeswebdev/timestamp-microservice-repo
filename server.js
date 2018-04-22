@@ -2,7 +2,9 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const moment = require('moment');
+let path = require('path');
 let app = express();
+
 
 let monthNames = [
     "January", "February", "March",
@@ -10,6 +12,14 @@ let monthNames = [
     "August", "September", "October",
     "November", "December"
   ];
+
+//serving my static css files from the /public directory
+app.use('/public',express.static(__dirname + '/public'));
+
+//request for the root directory explaining how to use the json api.
+app.get('/',function(request,response){
+    response.sendFile(path.join(__dirname + '/welcome.html'));
+});
 
 //declaring the directory in which we request a date and return the date values parsed in JSON
 app.get('/datevalues/:dateParam',function(request,response){
@@ -22,10 +32,10 @@ app.get('/datevalues/:dateParam',function(request,response){
         let momentMonth = momentUnix.month();
         let momentDay = momentUnix.date();
         let momentYear = momentUnix.year(); 
-        console.log(momentUnix);
+        //console.log(momentUnix);
         let month = monthNames[momentMonth];
         let dateStr = month + " " + momentDay + ", " + momentYear;
-        console.log(dateStr);
+        //console.log(dateStr);
         jsonObj = {"unix":Number(dateParam),"natural": dateStr };
     }
     else if(momentDate.isValid() && isNaN(dateParam)){
@@ -35,7 +45,6 @@ app.get('/datevalues/:dateParam',function(request,response){
     else{
         jsonObj = {"unix":null,"natural":null};
     }
-
     response.json(jsonObj);
 });
 //server listening on port 3000
