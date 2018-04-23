@@ -22,7 +22,7 @@ app.get('/',function(request,response){
 });
 
 //declaring the directory in which we request a date and return the date values parsed in JSON
-app.get('/datevalues/:dateParam',function(request,response){
+app.get('/:dateParam',function(request,response){
     let jsonObj = {};
     let dateParam = request.params.dateParam;
     let momentDate = moment(dateParam);
